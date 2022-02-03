@@ -152,9 +152,9 @@
             <div role="region" aria-labelledby="payment-method-region">
                 <h2 id="payment-method-region" class="title">{% trans "select payment method" as tmsg %}{{ tmsg | force_escape }}</h2>
                   <div id="payment-processor" class="payment-buttons col-sm-12" data-basket-id="{{ basket.id }}">
-                      <a href="#payment-information" class="payment-button credit-card" title="{% trans "Pay with a Credit Card" as tmsg %}{{ tmsg | force_escape }}" role="button">
+                      <!-- <a href="#payment-information" class="payment-button credit-card" title="{% trans "Pay with a Credit Card" as tmsg %}{{ tmsg | force_escape }}" role="button">
                           <img src="/static/images/credit_card_options.png">
-                      </a>
+                      </a> -->
                       {# Translators: Do NOT translate the name PayPal. #}
                       <button data-track-type="click"
                               data-track-event="edx.bi.ecommerce.basket.payment_selected"
@@ -185,7 +185,7 @@
             </div>
         </div>
         {% endif %}
-        <div id="card-holder-information" class="form-input-elements placeholder row">
+        <!-- <div id="card-holder-information" class="form-input-elements placeholder row">
             <div role="region" aria-labelledby="card-holder-information-region">
                 <h2 id="card-holder-information-region" class="title">{% trans "card holder information" as tmsg %}{{ tmsg | force_escape }}</h2>
                 {% if sdn_check %}
@@ -193,10 +193,11 @@
                 {% endif %}
                 {% crispy payment_form %}
             </div>
-        </div>
+        </div> -->
         {% endif %}
         <div class="form-input-elements placeholder">
             <div role="region" {% if not free_basket %}aria-labelledby="billing-information-region"{% endif %}>
+                <!--
                 {% if not free_basket %}
                     <h2 id="billing-information-region" class="title">{% trans "billing information" as tmsg %}{{ tmsg | force_escape }}</h2>
                 {% if not paypal_enabled %}
@@ -206,7 +207,7 @@
                     {# NOTE: The PCI fields should NOT have name attributes by default. This ensures the fields are #}
                     {# not posted to the server if JavaScript is disabled/fails. The processor-specific JS should #}
                     {# restore the name attribute to ensure this information is sent to the payment processor. #}
-                    <div class="form-group col-md-6">
+                     <div class="form-group col-md-6">
                         <label for="card-number" class="control-label">{% trans "Card Number (required)" as tmsg %}{{ tmsg | force_escape }}<span class="sr">, {% trans "Secure" as tmsg %}{{ tmsg | force_escape }}</span></label>
                         <input id="card-number" type="text" class="form-control pci-field" maxlength="20" required pattern="[0-9]*"/>
                         <i class="fa fa-lock" aria-hidden="true"></i>
@@ -252,7 +253,7 @@
                         <p class="help-block"></p>
                     </div>
                 </div>
-                {% endif %}
+                {% endif %} -->
 
                 <div class="payment-button col-sm-6 col-sm-offset-6 col-xs-12">
                 {% if free_basket %}
@@ -264,7 +265,7 @@
                         {% trans "Place Order" as tmsg %}{{ tmsg | force_escape }}
                     </a>
                 {% else %}
-                    <button id="payment-button" type="submit" class="btn btn-primary btn-large col-sm-12 col-xs-12"
+                    <!-- <button id="payment-button" type="submit" class="btn btn-primary btn-large col-sm-12 col-xs-12"
                             data-track-type="click"
                             data-track-event="edx.bi.ecommerce.basket.payment_selected"
                             data-track-category="checkout"
@@ -272,7 +273,7 @@
                             data-processor-name="{{ client_side_payment_processor.NAME }}"
                             data-track-checkout-type="client_side">
                       {% trans "Place Order" as tmsg %}{{ tmsg | force_escape }}
-                    </button>
+                    </button> -->
                 {% endif %}
                 </div>
             </div>
