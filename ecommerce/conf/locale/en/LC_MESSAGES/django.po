@@ -2358,7 +2358,7 @@ msgid "in your cart"
 msgstr ""
 
 #: ecommerce/templates/oscar/basket/partials/client_side_checkout_basket.html:17
-msgid "Your purchase contains the following"
+msgid "Your purchase contains the following items"
 msgstr ""
 
 #: ecommerce/templates/oscar/basket/partials/client_side_checkout_basket.html:36
